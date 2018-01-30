@@ -1,0 +1,139 @@
+/* See the documentation for how to load in regular weight versions */
+@font-face {
+	font-family: 'Benton';
+	src: url('https://apps.bostonglobe.com/common/font/benton-bold.woff2') format('woff2'), url('https://apps.bostonglobe.com/common/font/benton-bold.woff') format('woff');
+    font-weight: 600;
+}
+
+@font-face {
+	font-family: 'Miller';
+	src: url('https://apps.bostonglobe.com/common/font/miller-bold.woff2') format('woff2'), url('https://apps.bostonglobe.com/common/font/miller-bold.woff') format('woff');
+    font-weight: 600;
+}
+
+/* =========================== */
+/* Globe font stack examples
+/* =========================== */
+
+/* Serif (Miller) */
+/* font-family: 'Miller', Georgia, Times New Roman, Times, serif; */
+/* font-weight: 600; */
+
+/* Sans-serif (Benton) */
+/* font-family: 'Benton', Helvetica, Arial, sans-serif; */
+/* font-weight: 600; */
+
+/* Serif */
+/* font-family: 'Georgia', Times New Roman, Times, serif; */
+
+/* Sans-serif */
+/* font-family: 'Helvetica', Arial, sans-serif; */
+
+/* =========================== */
+/* Graphic styles
+/* =========================== */
+.graphichead {
+	/*font-family:'BentonSans', Helvetica, Arial, sans-serif;*/
+	font-family:'Pacifico', cursive, Helvetica, Arial, sans-serif;
+	font-size:4em;
+	font-weight:bold;
+	line-height: 1.2em;
+	display:block;
+	margin-top:100px;
+	padding-bottom: 20px;
+
+	/*text-align: right*/
+}
+.subtitle {
+	font-family: georgia,"times new roman",times,serif;
+	font-size:0.9em;
+	margin-top:20px;
+	margin-bottom:15px;
+}
+
+.east-content {
+	font-family: georgia,"times new roman",times,serif;
+	font-size:0.9em;
+	font-weight: 1.5em;
+}
+
+.plot{
+	min-height:600px;
+}
+@media (max-width: 600px) {
+	.plot {
+		min-height: 400px;
+	}
+}
+
+#mapid{
+	width: 100%;
+	height: 100vh;
+	/*background-image: url("./assets/grayMap.png");*/
+	background-color: cadetblue;
+	background-repeat: no-repeat;
+	background-position: calc(50% - 10px) calc(50%);
+	position: relative;
+}
+.showNote{
+	font-family: Benton;
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	font-size: 1.2rem;
+	z-index: 100;
+	color: white;
+	z-index: 1000;
+}
+.leaflet-tooltip{
+	animation:fadeOut 0.5s linear 2s 1;
+	animation-fill-mode: forwards;
+	-webkit-animation:fadeOut 0.5s linear 2s 1;
+	-webkit-animation-fill-mode: forwards;
+}
+@keyframes fadeOut{
+	0% { opacity: 1; visibility: visible; }
+	100% { opacity: 0; visibility: hidden; }
+}
+@-webkit-keyframes fadeOut{
+	0% { opacity: 1; visibility: visible; }
+	100% { opacity: 0; visibility: hidden; }
+}
+.start{
+	min-height: 500px;
+	width: 100%;
+}
+p{
+	line-height: 1.6em;
+}
+.map{
+	width: 100%;
+	min-height: 600px;
+	background-color: white;
+}
+.top100{
+	margin-top: 50px;
+}
+.hcenter{
+	padding-top: 50px;
+}
+.content-start{
+	position: relative;
+	padding-top: 100px;
+}
+.east-trigger{
+	min-height: 400px;
+	padding-top: 100px;
+}
+.fixed{
+	position: fixed;
+	bottom: 100px;
+	z-index: -99;
+}
+.bottom{
+	position: absolute;
+	bottom: 0px
+}
+.first-container{
+	background-color: white;
+}
