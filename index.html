@@ -9,6 +9,11 @@
     <meta http-equiv='Pragma' content='no-cache' />
     <meta http-equiv='Expires' content='0' />
 
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+
     <script type='text/javascript'>
         // https://github.com/filamentgroup/loadJS
         !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
@@ -22,14 +27,40 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Libre+Baskerville|Pacifico|Playfair+Display" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="./EastBoston_styles.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel='stylesheet' href='main.css?version=1' />
 </head>
-<body style='height: auto;'>
+<body style="overflow-x: hidden">
+
+<nav role="navigation" class="EastBoston_nav" >
+    <div id="menuToggle">
+        <!--
+        A fake / hidden checkbox is used as click reciever,
+        so you can use the :checked selector on it.
+        -->
+        <input type="checkbox" />
+
+        <!--
+        Some spans to act as a hamburger.
+        -->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <ul id="menu">
+            <a href="#" ><li style="font-size:4rem">Article 1</li></a>
+            <a href="#"><li style="font-size:4rem">Article 2</li></a>
+            <a href="#"><li style="font-size:4rem">Article 3</li></a>
+            <a href="#"><li style="font-size:4rem">Article 4</li></a>
+            <a href="#"><li style="font-size:4rem">Article 5</li></a>
+            <a href="#"><li style="font-size:4rem">Article 6</li></a>
+
+        </ul>
+    </div>
+</nav>
 
 
-
-<!-- *** DO NOT DELETE *** -->
-<div id='globe-graphic-container' style='height: 100%; overflow: hidden;'>
 
     <!--
     ==========================
@@ -37,40 +68,54 @@
     ==========================
     -->
 
-    <div class="container first-container">
+    <div class="container-fluid first-container">
         <div class="row">
             <div class="start col-md-8 offset-md-2">
-                <div class='graphichead'>Understand Easties <br/>from Bos: 311</div>
-                <p class='east-content'>Boston residents could call 311, Mayor's office, anytime request for non-emergency city services and information.</p>
-                <p class='east-content'>There are 12964 requests for non-emergency city service through Bos:311 in East Boston in 2017. The issues mentioned the most include street cleaning, highway maintenance, sanitation, traffic, building, trees, street lights, recycling, housing and animals.</p>
-                <p class='east-content'>This map randomly displays the 311 requests related to East Boston in 2017.</p>
+                <h1 class='EastBoston_head'>Understand Easties from Bos: 311</h1>
+                <p class='credit'>BY YAN WU</p>
+                <div class="EastBoston">
+                    <p class='east-content'>Boston residents could call 311, Mayor's office, anytime request for non-emergency city services and information.</p>
+                    <p class='east-content'>There are 12964 requests for non-emergency city service through Bos:311 in East Boston in 2017. The issues mentioned the most include street cleaning, highway maintenance, sanitation, traffic, building, trees, street lights, recycling, housing and animals.</p>
+                    <p class='east-content'>This map randomly displays the 311 requests related to East Boston in 2017.</p>
+                </div>
             </div>
-            <div class='plot' id='mapid'>
+            <div class='col-md-12 plot' id='mapid'>
                 <p class="showNote"><span id="showYear">12:00 AM</span>, 2017</p>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row top100 content-start">
-            <div class="col-md-6" id="map-container">
-                <div class="map fixed" id="mapid2"></div>
-            </div>
+    <div class="container-fluid">
+        <div class="row content-start">
 
-            <div class="col-md-4 offset-md-1 hcenter">
-                <p class='east-content east-trigger' id="trigger-0">Enforcement & abandoned vehicles is one of the most frequent complaints about issues by the East Boston residents. In 2017, 2313 requests are related to it.</p>
-                <p class="east-content east-trigger" id="trigger-1">Abandoned vehicles are safety hazards and they blight neighborhoods. Among all neighborhoods, Eagle Hill has seen the most complaints.</p>
-            </div>
+             <div class="map" id="mapid2"></div>
+
             <div class="col-md-4 offset-md-7 hcenter">
-                <p class='east-content east-trigger' id="trigger-2">Judging from the 311 requests,
-                    street cleaning is the second most complained issue by the East Boston residents. In 2017, 1671 requests are related it. Eagle Hill and Maverick has sent more requests than Orient Heights.</p>
-                <p class='east-content east-trigger' id="trigger-3">Recycling and Sanitation service requests were also popular. Orient Heights residents showed more passion for these services than others.</p>
-                <p class='east-content east-trigger' id="trigger-4">There are 1388 requests for Highway Maintenance, which took up more than 10% of all requests.</p>
+
+                <p class='east-content east-trigger' id="trigger-0">
+                    <span class="subhed">Traffic</span><br/><br/>
+                    Traffic related issues have always been complained the most.<br/><br/> Enforcement & abandoned vehicles got the most frequently complains from the East Boston residents. In 2017, 2313 requests are related to it. </p>
+                <p class="east-content east-trigger" id="trigger-1">The Boston officials said "Abandoned vehicles issues are are safety hazards and they blight neighborhoods." <br/><br/>Among all neighborhoods, Eagle Hill has seen the most complaints.</p>
+                <p class='east-content east-trigger' id="trigger-2">Another traffic related problem is about highways. Three highways past East Boston: Massachusetts Route 1A, Interstate 90 (I-90)/Mass Turnpike, and Massachusetts Route 145.<br/><br/>
+                    There are 1388 requests for highway maintenance, among which, many happened along three routes - Meridian Street, Bennington Street, and Chelsea Street.</p>
+                <p class='east-content east-trigger' id="trigger-3">
+                    <span class="subhed">Environment</span><br/><br/>
+                    Judging from the 311 requests,
+                    street cleaning is the second most complained issue by the East Boston residents. In 2017, 1671 requests are related to it. </p>
+                <p class='east-content east-trigger' id="trigger-4">Residents at Eagle Hill and Jefferies Point have sent more requests than Orient Heights. Especially, Maverick Street residents have seen an unusual amount of requests about street cleaning.</p>
+                <p class='east-content east-trigger' id="trigger-5">Recycling and Sanitation service requests were also popular. Orient Heights residents showed more passion for these services than street cleaning.</p>
+                <p class='east-content east-trigger' id="trigger-6">
+                    <span class="subhed">Public Equipment</span><br/><br/>
+                    Street lights, Signs & Signals, Park Maintenance & Safety were also frequently complained issues, which added up to nearly 1700 requests.</p>
+                <p class='east-content east-trigger' id="trigger-7">There were more than 1000 complaints about housing and building issues, mostly happened in Eagle Hill and Jefferies Point. </p>
+                <div class="spacer"></div>
+                <div class="source">
+                    <p><span>SOURCE: <a href="https://data.boston.gov/organization/about/boston-311-org" target="_blank">Boston 311 Service Requests</a></span></p>
+                </div>
             </div>
         </div>
 
     </div>
 
-</div>
 
 
     <!--<div id='mapid2'>-->
@@ -79,22 +124,20 @@
 
     <!-- end ai2html here DO NOT MODIFY THIS LINE -->
 
-    <div class='source-and-credit'>
-        <p class='source'><span>SOURCE: <a href="https://data.boston.gov/organization/about/boston-311-org" target="_blank">Boston 311 Service Requests</a></span></p>
-        <p class='credit'><span>Development: Yan Wu</span></p>
-    </div>
     <!--
     ==========================
     END OF GRAPHIC CODE
     ==========================
     -->
 
-</div>
+
 
 <!-- (begin) put js libraries here -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.10.0/d3.min.js' type='text/javascript'></script>
-
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+<script src="./L.Polyline.SnakeAnim.js"></script>
+<script src="./PathAnime.js"></script>
+<script src="./route.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
 <script src="main.js"></script>
