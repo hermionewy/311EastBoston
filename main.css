@@ -174,3 +174,9 @@ p.east-content {
 .spacer{
 	min-height: 300px;
 }
+.btns-div{
+	position: fixed;
+	top: 30px;
+	left: 20px;
+	z-index: -1;
+}
